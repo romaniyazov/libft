@@ -6,7 +6,7 @@
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 10:08:07 by adavis            #+#    #+#             */
-/*   Updated: 2019/04/06 16:38:14 by adavis           ###   ########.fr       */
+/*   Updated: 2019/04/09 16:57:58 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char	*newstr;
 	char	*str;
-	int		i;
+	size_t	i;
 
 	if (!s)
 		return (NULL);
@@ -24,7 +24,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	str = newstr;
 	i = 0;
-	while (i++ < start)
+	while (i++ < (size_t)start)
 		s++;
 	i = 0;
 	while (i++ < len)

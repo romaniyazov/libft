@@ -6,7 +6,7 @@
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 18:15:19 by adavis            #+#    #+#             */
-/*   Updated: 2019/04/09 15:41:23 by adavis           ###   ########.fr       */
+/*   Updated: 2019/04/09 16:58:47 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <string.h>
 # include <libc.h>
 
-/*			Part 1 - Libc functions			*/
+/* Part 1 - Libc functions */
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dst, void *src, size_t n);
