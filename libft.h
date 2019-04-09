@@ -6,7 +6,7 @@
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 18:15:19 by adavis            #+#    #+#             */
-/*   Updated: 2019/04/09 15:38:05 by adavis           ###   ########.fr       */
+/*   Updated: 2019/04/09 15:41:23 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,7 @@ void	ft_putnbr_fd(int n, int fd);
 /*			Bonus part			*/
 int		ft_islower(int c);
 int		ft_isupper(int c);
+int		ft_isspace(char c);
+void	ft_strrev(char *str);
 
 #endif
