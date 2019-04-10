@@ -3,54 +3,56 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
+/*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/08 15:46:58 by adavis            #+#    #+#             */
-/*   Updated: 2019/04/08 19:20:03 by adavis           ###   ########.fr       */
+/*   Created: 2013/11/22 17:43:41 by apachkof          #+#    #+#             */
+/*   Updated: 2013/12/01 20:05:39 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-char	*ft_itoa(int n)
+static void		lengths(int n, size_t *len, int *weight)
 {
-	int		tmp;
-	int		len;
-	int		sign;
-	char	*str;
-
-	if (n == -2147483648)
-		return ("-2147483648");
-	len = 0;
-	if((sign = n) < 0)
+	*len = 1;
+	if (n >= 0)
 	{
+		*len = 0;
 		n = -n;
-		len = 1;
 	}
-	tmp = n;
-	while (tmp > 0)
+	*weight = 1;
+	while (n / *weight < -9)
 	{
-		len++;
-		tmp /= 10;
+		*weight *= 10;
+		*len += 1;
 	}
-	if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
+}
+
+char			*ft_itoa(int n)
+{
+	size_t		len;
+	int			weight;
+	size_t		cur;
+	char		*str;
+
+	lengths(n, &len, &weight);
+	str = (char *)malloc(sizeof(*str) * (len + 1));
+	if (str == NULL)
 		return (NULL);
-	tmp = 0; ///
-	while (n > 0)
+	cur = 0;
+	if (n < 0)
 	{
-		str[tmp] = (n % 10) + '0';///
-		n /= 10;
-		//str++;
-		tmp++; ///
+		str[cur] = '-';
+		cur++;
 	}
-	if (sign < 0)
+	if (n > 0)
+		n = -n;
+	while (weight >= 1)
 	{
-		str[tmp] = '-'; ///
-		//str++;
-		tmp++; ///
+		str[cur++] = -(n / weight % 10) + 48;
+		weight /= 10;
 	}
-	str[tmp] = '\0'; ///
-	ft_strrev(str);
-	return(str);
+	str[cur] = '\0';
+	return (str);
 }
