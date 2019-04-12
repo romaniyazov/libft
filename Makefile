@@ -6,7 +6,7 @@
 #    By: adavis <adavis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/03 13:37:06 by adavis            #+#    #+#              #
-#    Updated: 2019/04/10 17:36:34 by adavis           ###   ########.fr        #
+#    Updated: 2019/04/11 18:38:06 by adavis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,15 +70,16 @@ SRC			=	ft_memset.c \
 OBJ			=	$(SRC:%.c=%.o)
 
 $(NAME):
-	gcc $(FLAGS) $(SRC)
-	ar rc $(NAME) $(OBJ)
+	@gcc $(FLAGS) $(SRC)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
 
 all: $(NAME)
 
 clean:
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
