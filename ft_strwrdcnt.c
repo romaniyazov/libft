@@ -6,9 +6,13 @@
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 20:32:32 by adavis            #+#    #+#             */
-/*   Updated: 2019/04/12 20:32:44 by adavis           ###   ########.fr       */
+/*   Updated: 2019/04/12 20:36:34 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** Counting number of substrings between separators
+*/
 
 int		ft_strwrdcnt(char *str, char c)
 {
