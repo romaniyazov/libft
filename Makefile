@@ -6,7 +6,7 @@
 #    By: adavis <adavis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/03 13:37:06 by adavis            #+#    #+#              #
-#    Updated: 2019/04/12 15:10:17 by adavis           ###   ########.fr        #
+#    Updated: 2019/04/12 23:20:31 by adavis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,9 @@ SRC			=	ft_memset.c \
 				ft_islower.c \
 				ft_isupper.c \
 				ft_isspace.c \
-				ft_itoa.c
+				ft_itoa.c \
+				ft_strsplit.c \
+				ft_strwrdcnt.c
 OBJ			=	$(SRC:%.c=%.o)
 
 $(NAME):
