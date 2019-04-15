@@ -6,7 +6,7 @@
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 17:13:35 by adavis            #+#    #+#             */
-/*   Updated: 2018/12/12 19:54:18 by adavis           ###   ########.fr       */
+/*   Updated: 2019/04/15 20:00:57 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	unsigned int	i;
 
 	i = 0;
-	if (s != NULL)
+	if (s && f)
 		while (s[i])
 		{
 			(*f)(i, &s[i]);

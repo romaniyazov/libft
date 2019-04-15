@@ -6,7 +6,7 @@
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 16:22:31 by adavis            #+#    #+#             */
-/*   Updated: 2019/04/15 16:42:39 by adavis           ###   ########.fr       */
+/*   Updated: 2019/04/15 20:03:37 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	**ft_strsplit(char const *s, char c)
 	int		i;
 	int		j;
 
-	if (!(words = (char **)malloc(sizeof(*words) *
+	if (!s || !(words = (char **)malloc(sizeof(*words) *
 								((wrdcnt = ft_strwrdcnt((char *)s, c)) + 1))))
 		return (NULL);
 	i = 0;
