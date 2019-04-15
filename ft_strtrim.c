@@ -6,7 +6,7 @@
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/06 17:30:27 by adavis            #+#    #+#             */
-/*   Updated: 2019/04/06 18:30:52 by adavis           ###   ########.fr       */
+/*   Updated: 2019/04/15 18:43:01 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,8 @@ char	*ft_strtrim(char const *s)
 	while (*ss == ' ' || *ss == '\n' || *ss == '\t')
 		ss++;
 	s_start = ss;
-	i = 0;
-	while (*ss != '\0')
-	{
-		i++;
-		ss++;
-	}
-	ss--;
+	i = ft_strlen(ss);
+	ss += ft_strlen(ss) - 1;
 	while ((*ss == ' ' || *ss == '\n' || *ss == '\t') && i > 0)
 	{
 		i--;
