@@ -6,7 +6,7 @@
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 18:15:19 by adavis            #+#    #+#             */
-/*   Updated: 2019/04/12 21:22:44 by adavis           ###   ########.fr       */
+/*   Updated: 2019/04/15 16:25:39 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,7 @@ int		ft_isspace(char c);
 void	ft_strrev(char *str);
 char	*ft_itoa(int n);
 int		ft_strwrdcnt(char *str, char sep);
+int		ft_strwrdlen(char *str, char sep);
+char	**ft_strsplit(char const *s, char c);
 
 #endif
