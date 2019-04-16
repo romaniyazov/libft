@@ -6,7 +6,7 @@
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 18:15:19 by adavis            #+#    #+#             */
-/*   Updated: 2019/04/15 23:09:06 by adavis           ###   ########.fr       */
+/*   Updated: 2019/04/16 20:31:54 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,16 @@
 # include <string.h>
 # include <libc.h>
 
+typedef struct		s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}					t_list;
+
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
-void	*ft_memcpy(void *dst, void *src, size_t n);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memchr(const void *s, int c, size_t n);
@@ -74,5 +81,7 @@ int		ft_strwrdcnt(char *str, char sep);
 int		ft_strwrdlen(char *str, char sep);
 char	**ft_strsplit(char const *s, char c);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
+t_list	*ft_lstnew(void const *content, size_t content_size);
+void	ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
 
 #endif
