@@ -6,7 +6,7 @@
 #    By: adavis <adavis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/03 13:37:06 by adavis            #+#    #+#              #
-#    Updated: 2019/04/16 20:32:02 by adavis           ###   ########.fr        #
+#    Updated: 2019/04/16 21:05:23 by adavis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,8 @@ SRC			=	ft_memset.c \
 				ft_strlcat.c \
 				ft_strrev.c \
 				ft_lstnew.c \
-				ft_lstdelone.c
+				ft_lstdelone.c \
+				ft_lstdel.c
 OBJ			=	$(SRC:%.c=%.o)
 
 $(NAME):
