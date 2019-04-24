@@ -6,7 +6,7 @@
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 17:17:23 by adavis            #+#    #+#             */
-/*   Updated: 2018/12/12 19:56:55 by adavis           ###   ########.fr       */
+/*   Updated: 2019/04/24 16:30:50 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	char	*sn;
 	int		i;
 
-	if (s == NULL)
+	if (!s || !f)
 		return (0);
 	if (!(sn = malloc(ft_strlen(s) * sizeof(char) + 1)))
 		return (NULL);
