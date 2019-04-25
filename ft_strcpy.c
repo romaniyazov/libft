@@ -3,23 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adavis <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 15:37:43 by adavis            #+#    #+#             */
-/*   Updated: 2018/11/28 15:45:32 by adavis           ###   ########.fr       */
+/*   Updated: 2019/04/25 16:41:53 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strcpy(char *dst, const char *src)
 {
-	int		i;
+	char	*src_iter;
+	char	*dst_start;
 
-	i = 0;
-	while (src[i] != '\0')
+	dst_start = dst;
+	src_iter = (char *)src;
+	while (*src_iter != '\0')
 	{
-		dst[i] = src[i];
-		i++;
+		*dst = *src_iter;
+		dst++;
+		src_iter++;
 	}
-	dst[i] = '\0';
-	return (dst);
+	*dst = '\0';
+	return (dst_start);
 }

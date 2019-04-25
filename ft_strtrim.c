@@ -6,7 +6,7 @@
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/06 17:30:27 by adavis            #+#    #+#             */
-/*   Updated: 2019/04/15 18:43:01 by adavis           ###   ########.fr       */
+/*   Updated: 2019/04/25 16:36:39 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strtrim(char const *s)
 	char	*ss;
 	char	*s_start;
 	char	*s_new;
-	int		i;
+	size_t	i;
 
 	if (!s)
 		return (NULL);

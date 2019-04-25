@@ -6,7 +6,7 @@
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 17:39:46 by adavis            #+#    #+#             */
-/*   Updated: 2019/04/04 18:11:28 by adavis           ###   ########.fr       */
+/*   Updated: 2019/04/25 16:34:26 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*sn;
-	int		i;
+	size_t	i;
 
 	if (s == NULL)
 		return (0);

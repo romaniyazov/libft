@@ -6,7 +6,7 @@
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 16:07:54 by adavis            #+#    #+#             */
-/*   Updated: 2019/04/09 16:45:30 by adavis           ###   ########.fr       */
+/*   Updated: 2019/04/25 16:35:24 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	unsigned long	i;
+	size_t	i;
 
 	if (needle[0] == '\0')
 		return ((char *)haystack);

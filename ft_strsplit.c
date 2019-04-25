@@ -6,13 +6,13 @@
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 16:22:31 by adavis            #+#    #+#             */
-/*   Updated: 2019/04/16 19:12:20 by adavis           ###   ########.fr       */
+/*   Updated: 2019/04/25 16:36:19 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	*arr_free(void **arr, int i)
+static void	*arr_free(void **arr, size_t i)
 {
 	while (i--)
 		free(arr[i]);
@@ -25,8 +25,8 @@ char		**ft_strsplit(char const *s, char c)
 {
 	char	**words;
 	int		wrdcnt;
-	int		i;
-	int		j;
+	size_t	i;
+	size_t	j;
 
 	if (!s || !(words = (char **)malloc(sizeof(*words) *
 								((wrdcnt = ft_strwrdcnt((char *)s, c)) + 1))))

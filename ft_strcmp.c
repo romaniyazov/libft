@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adavis <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/27 19:49:33 by adavis            #+#    #+#             */
-/*   Updated: 2018/12/03 14:48:06 by adavis           ###   ########.fr       */
+/*   Updated: 2019/04/25 16:27:13 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 
 int		ft_strcmp(const char *s1, const char *s2)
 {
-	int		i;
+	char	*s1_iter;
+	char	*s2_iter;
 
-	i = 0;
-	while (s1[i] != '\0' || s2[i] != '\0')
+	s1_iter = (char *)s1;
+	s2_iter = (char *)s2;
+	while (*s1_iter || *s2_iter)
 	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		i++;
+		if (*s1_iter != *s2_iter)
+			return ((unsigned char)*s1_iter - (unsigned char)*s2_iter);
+		s1_iter++;
+		s2_iter++;
 	}
 	return (0);
 }

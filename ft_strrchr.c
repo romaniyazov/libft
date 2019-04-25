@@ -6,7 +6,7 @@
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 17:34:20 by adavis            #+#    #+#             */
-/*   Updated: 2019/04/16 18:42:16 by adavis           ###   ########.fr       */
+/*   Updated: 2019/04/25 16:37:46 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
+	size_t	i;
 	char	*str;
 
 	str = NULL;

@@ -6,15 +6,17 @@
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 16:30:11 by adavis            #+#    #+#             */
-/*   Updated: 2019/04/09 16:57:30 by adavis           ###   ########.fr       */
+/*   Updated: 2019/04/25 16:42:23 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	ft_strrev(char *str)
 {
-	int		i;
-	int		j;
-	int		len;
+	size_t	i;
+	size_t	j;
+	size_t	len;
 	char	tmp;
 
 	i = 0;

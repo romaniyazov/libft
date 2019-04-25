@@ -6,13 +6,15 @@
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 16:24:58 by adavis            #+#    #+#             */
-/*   Updated: 2019/04/15 16:40:13 by adavis           ###   ########.fr       */
+/*   Updated: 2019/04/25 16:37:33 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strwrdlen(char *str, char sep)
+#include "libft.h"
+
+size_t	ft_strwrdlen(char *str, char sep)
 {
-	int		cnt;
+	size_t	cnt;
 
 	cnt = 0;
 	while (*str != '\0' && *str != sep)

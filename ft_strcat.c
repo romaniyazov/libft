@@ -6,25 +6,25 @@
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/27 20:07:53 by adavis            #+#    #+#             */
-/*   Updated: 2019/04/16 18:40:37 by adavis           ###   ########.fr       */
+/*   Updated: 2019/04/25 16:23:17 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strcat(char *s1, const char *s2)
 {
-	int		i;
-	int		j;
+	char	*s2_iter;
+	char	*s1_start;
 
-	i = 0;
-	while (s1[i] != '\0')
-		i++;
-	j = 0;
-	while (s2[j] != '\0')
+	s1_start = s1;
+	s2_iter = (char *)s2;
+	while (*s1 != '\0')
+		s1++;
+	while (*s2_iter != '\0')
 	{
-		s1[i] = s2[j];
-		i++;
-		j++;
+		*s1 = *s2_iter;
+		s1++;
+		s2_iter++;
 	}
-	s1[i] = '\0';
-	return (s1);
+	*s1 = '\0';
+	return (s1_start);
 }
