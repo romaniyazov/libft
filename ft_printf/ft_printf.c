@@ -1,29 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/23 17:34:20 by adavis            #+#    #+#             */
-/*   Updated: 2019/05/01 18:31:11 by adavis           ###   ########.fr       */
+/*   Created: 2019/08/31 19:59:48 by adavis            #+#    #+#             */
+/*   Updated: 2019/09/05 22:08:55 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strchr(const char *s, int c)
+int		ft_printf(const char *format, ...)
 {
-	char	*s_iter;
+	va_list		ap;
+	t_params	params;
+	char		*fmt;
+	char		*ffmt;
+	int			len;
 
-	s_iter = (char *)s;
-	while (*s_iter)
+	len = 0;
+	fmt = ft_strnew(ft_strlen(format) + 1);
+	ft_strcpy(fmt, format);
+	ffmt = fmt;
+	va_start(ap, format);
+	while (*fmt)
 	{
-		if (*s_iter == (char)c)
-			return (s_iter);
-		s_iter++;
+		if (*fmt == '%')
+			len += parse(&fmt, ap, &params);
+		else
+		{
+			ft_putchar(*fmt);
+			len++;
+		}
+		fmt++;
 	}
-	if (*s_iter == (char)c)
-		return (s_iter);
-	return (NULL);
+	va_end(ap);
+	ft_strdel(&ffmt);
+	return (len);
 }

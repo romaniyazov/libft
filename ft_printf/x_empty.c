@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   x_empty.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/23 17:34:20 by adavis            #+#    #+#             */
-/*   Updated: 2019/05/01 18:31:11 by adavis           ###   ########.fr       */
+/*   Created: 2019/09/04 20:07:40 by adavis            #+#    #+#             */
+/*   Updated: 2019/09/04 20:08:08 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strchr(const char *s, int c)
+int		x_empty(size_t width)
 {
-	char	*s_iter;
+	int		i;
 
-	s_iter = (char *)s;
-	while (*s_iter)
-	{
-		if (*s_iter == (char)c)
-			return (s_iter);
-		s_iter++;
-	}
-	if (*s_iter == (char)c)
-		return (s_iter);
-	return (NULL);
+	i = 0;
+	while (i++ < (int)width)
+		ft_putchar(' ');
+	return (width);
 }

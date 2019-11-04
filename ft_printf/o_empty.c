@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   o_empty.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/23 17:34:20 by adavis            #+#    #+#             */
-/*   Updated: 2019/05/01 18:31:11 by adavis           ###   ########.fr       */
+/*   Created: 2019/09/04 20:11:10 by adavis            #+#    #+#             */
+/*   Updated: 2019/09/04 20:14:52 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strchr(const char *s, int c)
+int		o_empty(t_params *params)
 {
-	char	*s_iter;
+	size_t	i;
 
-	s_iter = (char *)s;
-	while (*s_iter)
+	if (!params->alternate)
 	{
-		if (*s_iter == (char)c)
-			return (s_iter);
-		s_iter++;
+		i = 0;
+		while (i++ < params->width)
+			ft_putchar(' ');
+		return (params->width);
 	}
-	if (*s_iter == (char)c)
-		return (s_iter);
-	return (NULL);
+	else
+	{
+		ft_putchar('0');
+		return (1);
+	}
 }

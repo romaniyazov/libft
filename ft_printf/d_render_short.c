@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   d_render_short.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/23 17:34:20 by adavis            #+#    #+#             */
-/*   Updated: 2019/05/01 18:31:11 by adavis           ###   ########.fr       */
+/*   Created: 2019/09/04 20:58:31 by adavis            #+#    #+#             */
+/*   Updated: 2019/09/22 14:42:01 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strchr(const char *s, int c)
+int		d_render_short(short d)
 {
-	char	*s_iter;
+	short	tmp;
+	int		div;
+	int		len;
 
-	s_iter = (char *)s;
-	while (*s_iter)
+	tmp = d;
+	div = 1;
+	while (tmp / div > 10)
+		div *= 10;
+	len = 0;
+	while (div > 0)
 	{
-		if (*s_iter == (char)c)
-			return (s_iter);
-		s_iter++;
+		ft_putchar(d / div % 10 + '0');
+		div /= 10;
+		len++;
 	}
-	if (*s_iter == (char)c)
-		return (s_iter);
-	return (NULL);
+	return (len);
 }

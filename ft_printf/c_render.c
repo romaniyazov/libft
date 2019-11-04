@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   c_render.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/23 17:34:20 by adavis            #+#    #+#             */
-/*   Updated: 2019/05/01 18:31:11 by adavis           ###   ########.fr       */
+/*   Created: 2019/09/01 15:05:12 by adavis            #+#    #+#             */
+/*   Updated: 2019/09/05 21:43:30 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strchr(const char *s, int c)
+int		c_render(char c, t_params *params)
 {
-	char	*s_iter;
+	size_t	len;
 
-	s_iter = (char *)s;
-	while (*s_iter)
+	len = 1;
+	if (params->left)
+		ft_putchar(c);
+	params->width--;
+	while ((int)params->width-- > 0)
 	{
-		if (*s_iter == (char)c)
-			return (s_iter);
-		s_iter++;
+		ft_putchar(' ');
+		len++;
 	}
-	if (*s_iter == (char)c)
-		return (s_iter);
-	return (NULL);
+	if (!params->left)
+		ft_putchar(c);
+	return (len);
 }

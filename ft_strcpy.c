@@ -6,7 +6,7 @@
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 15:37:43 by adavis            #+#    #+#             */
-/*   Updated: 2019/04/25 16:41:53 by adavis           ###   ########.fr       */
+/*   Updated: 2019/05/01 18:45:23 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strcpy(char *dst, const char *src)
 
 	dst_start = dst;
 	src_iter = (char *)src;
-	while (*src_iter != '\0')
+	while (*src_iter)
 	{
 		*dst = *src_iter;
 		dst++;

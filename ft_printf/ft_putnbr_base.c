@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/12 16:13:17 by adavis            #+#    #+#             */
-/*   Updated: 2019/09/05 16:18:54 by adavis           ###   ########.fr       */
+/*   Created: 2019/09/01 16:46:56 by adavis            #+#    #+#             */
+/*   Updated: 2019/09/22 14:42:16 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_putnbr(long long n)
+void	ft_putnbr_base(unsigned long long nbr, int base, t_bool upper)
 {
-	unsigned long long	num;
-	unsigned long long	num2;
-	unsigned long long	dvdr;
+	unsigned long long	tmp;
+	unsigned long long	div;
 
-	if (n < 0)
+	tmp = nbr;
+	div = 1;
+	while (tmp > (unsigned long long)(base - 1))
 	{
-		ft_putchar('-');
-		num = n * -1;
+		div *= base;
+		tmp /= base;
 	}
-	else
-		num = n;
-	num2 = num;
-	dvdr = 1;
-	while (num2 > 9)
+	while (div > 0)
 	{
-		dvdr *= 10;
-		num2 /= 10;
-	}
-	while (dvdr > 0)
-	{
-		ft_putchar(num / dvdr % 10 + '0');
-		dvdr /= 10;
+		if (upper)
+			ft_putchar(BASE_CHARS_UPPER[nbr / div % base]);
+		else
+			ft_putchar(BASE_CHARS_LOWER[nbr / div % base]);
+		div /= base;
 	}
 }

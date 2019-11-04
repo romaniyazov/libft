@@ -6,7 +6,7 @@
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/27 20:07:53 by adavis            #+#    #+#             */
-/*   Updated: 2019/04/25 16:34:49 by adavis           ###   ########.fr       */
+/*   Updated: 2019/05/13 19:48:17 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 	size_t	j;
 
 	i = 0;
-	while (s1[i] != '\0')
+	while (s1[i])
 		i++;
 	j = 0;
-	while (s2[j] != '\0' && j < n)
+	while (s2[j] && j < n)
 	{
 		s1[i] = s2[j];
 		i++;

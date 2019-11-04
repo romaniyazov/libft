@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   d_render_zeros.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/23 17:34:20 by adavis            #+#    #+#             */
-/*   Updated: 2019/05/01 18:31:11 by adavis           ###   ########.fr       */
+/*   Created: 2019/09/04 20:23:17 by adavis            #+#    #+#             */
+/*   Updated: 2019/09/04 20:23:18 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strchr(const char *s, int c)
+void	d_render_zeros(long long d, t_params *params)
 {
-	char	*s_iter;
-
-	s_iter = (char *)s;
-	while (*s_iter)
-	{
-		if (*s_iter == (char)c)
-			return (s_iter);
-		s_iter++;
-	}
-	if (*s_iter == (char)c)
-		return (s_iter);
-	return (NULL);
+	if (d < 0)
+		ft_putchar('-');
+	else if (params->sign)
+		ft_putchar('+');
+	while ((int)(params->width--) - (int)d_nbrlen(d) - params->space > 0)
+		ft_putchar('0');
+	ft_putnbr(d >= 0 ? d : -d);
 }

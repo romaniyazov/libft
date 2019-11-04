@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/23 17:34:20 by adavis            #+#    #+#             */
-/*   Updated: 2019/05/01 18:31:11 by adavis           ###   ########.fr       */
+/*   Created: 2019/04/26 15:21:32 by adavis            #+#    #+#             */
+/*   Updated: 2019/09/22 13:38:33 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-char	*ft_strchr(const char *s, int c)
+# include "libft.h"
+# include <stdlib.h>
+# include <unistd.h>
+
+# define BUFF_SIZE 3
+
+typedef struct	s_gnl
 {
-	char	*s_iter;
+	char		buf[BUFF_SIZE + 1];
+	char		*tmp;
+	int			rd;
+}				t_gnl;
 
-	s_iter = (char *)s;
-	while (*s_iter)
-	{
-		if (*s_iter == (char)c)
-			return (s_iter);
-		s_iter++;
-	}
-	if (*s_iter == (char)c)
-		return (s_iter);
-	return (NULL);
-}
+int				get_next_line(const int fd, char **line);
+
+#endif

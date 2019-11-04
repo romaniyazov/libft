@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   perc_render.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adavis <adavis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/23 17:34:20 by adavis            #+#    #+#             */
-/*   Updated: 2019/05/01 18:31:11 by adavis           ###   ########.fr       */
+/*   Created: 2019/09/04 14:27:54 by adavis            #+#    #+#             */
+/*   Updated: 2019/09/06 12:20:45 by adavis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strchr(const char *s, int c)
+int		perc_render(t_params *params)
 {
-	char	*s_iter;
+	int		i;
 
-	s_iter = (char *)s;
-	while (*s_iter)
-	{
-		if (*s_iter == (char)c)
-			return (s_iter);
-		s_iter++;
-	}
-	if (*s_iter == (char)c)
-		return (s_iter);
-	return (NULL);
+	i = 1;
+	if (params->left)
+		ft_putchar('%');
+	while (i++ < (int)params->width)
+		ft_putchar(params->zeros && !params->left ? '0' : ' ');
+	if (!params->left)
+		ft_putchar('%');
+	if (params->width > 1)
+		return ((int)params->width);
+	return (1);
 }
